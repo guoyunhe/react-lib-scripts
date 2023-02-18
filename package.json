@@ -27,6 +27,8 @@
   },
   "files": [
     "dist",
+    "global.d.ts",
+    "jest-preset.mjs",
     "CHANGELOG.md",
     "LICENSE",
     "README.md"
