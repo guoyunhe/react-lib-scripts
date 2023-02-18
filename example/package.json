@@ -1,7 +1,9 @@
 {
+  "private": true,
   "name": "foobar",
   "version": "1.0.0",
   "scripts": {
+    "dev": "vite",
     "start": "../dist/react-lib-scripts.js start",
     "build": "../dist/react-lib-scripts.js build"
   }

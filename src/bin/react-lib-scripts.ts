@@ -12,7 +12,7 @@ const program = new Command('react-lib-scripts');
 program
   .command('start')
   .description('Start document dev server')
-  .option('--port', 'HTTP port of dev server')
+  .option('--port <number>', 'HTTP port of dev server')
   .action(startDocServer);
 
 program
