@@ -1,0 +1,8 @@
+{
+  "name": "foobar",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "../dist/react-lib-scripts.js start",
+    "build": "../dist/react-lib-scripts.js build"
+  }
+}

@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0 - 2023-02-15
+## 1.1.0 - 2023-02-15
 
 - Added something
 - Changed something

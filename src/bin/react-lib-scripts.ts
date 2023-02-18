@@ -3,9 +3,17 @@
 import { lint } from '@guoyunhe/lint-action';
 import { Command } from 'commander';
 import { run as jestRun } from 'jest';
-import { buildNode } from '..';
+import { buildReactDoc } from '../buildReactDoc';
+import { buildReactLib } from '../buildReactLib';
+import { startDocServer } from '../startReactDoc';
 
-const program = new Command('node-scripts');
+const program = new Command('react-lib-scripts');
+
+program
+  .command('start')
+  .description('Start document dev server')
+  .option('--port', 'HTTP port of dev server')
+  .action(startDocServer);
 
 program
   .command('build')
@@ -14,14 +22,19 @@ program
     '--watch',
     'Watch source code change and rebuild automatically, same as node-scripts watch'
   )
-  .action(buildNode);
+  .action(async (options) => {
+    await buildReactLib(options);
+    if (!options.watch) {
+      await buildReactDoc();
+    }
+  });
 
 program
   .command('watch')
   .description(
     'Watch source code change and rebuild automatically, same as node-scripts build --watch'
   )
-  .action(() => buildNode({ watch: true }));
+  .action(() => buildReactLib({ watch: true }));
 
 program
   .command('lint')
@@ -43,9 +56,6 @@ program
 program.helpOption('-h, --help', 'Show full help');
 program.addHelpCommand('help [command]', 'Show help of a command');
 
-declare const PACKAGE_VERSION: string;
-if (typeof PACKAGE_VERSION === 'string') {
-  program.version(PACKAGE_VERSION, '-v, --version', 'Show version number');
-}
+program.version(PACKAGE_VERSION, '-v, --version', 'Show version number');
 
 program.parse();
