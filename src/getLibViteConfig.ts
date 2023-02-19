@@ -25,7 +25,7 @@ export async function getLibViteConfig(watch?: boolean): Promise<UserConfig> {
               return 'index.' + format + '.js';
           }
         },
-        formats: ['cjs', 'es', 'umd'],
+        formats: ['cjs', 'es'],
       },
       watch: watch ? {} : null,
     },
