@@ -15,7 +15,17 @@ export async function getLibViteConfig(watch?: boolean): Promise<UserConfig> {
       outDir: 'dist',
       lib: {
         entry: entries[0],
-        formats: ['cjs', 'es'],
+        fileName: (format) => {
+          switch (format) {
+            case 'cjs':
+              return 'index.js';
+            case 'es':
+              return 'index.mjs';
+            default:
+              return 'index.' + format + '.js';
+          }
+        },
+        formats: ['cjs', 'es', 'umd'],
       },
       watch: watch ? {} : null,
     },
