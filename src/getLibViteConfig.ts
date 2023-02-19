@@ -1,5 +1,6 @@
 import glob from 'fast-glob';
 import { UserConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 import { externalizeDeps } from 'vite-plugin-externalize-deps';
 import { getPackageJson } from './getPackageJson';
 
@@ -22,6 +23,11 @@ export async function getLibViteConfig(watch?: boolean): Promise<UserConfig> {
       PACKAGE_NAME: `"${packageJson.name}"`,
       PACKAGE_VERSION: `"${packageJson.version}"`,
     },
-    plugins: [externalizeDeps()],
+    plugins: [
+      externalizeDeps(),
+      dts({
+        rollupTypes: true,
+      }),
+    ],
   };
 }
