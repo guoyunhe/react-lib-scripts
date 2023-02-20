@@ -1,6 +1,7 @@
 import react from '@vitejs/plugin-react-swc';
 import glob from 'fast-glob';
 import { UserConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import { getPackageJson } from './getPackageJson';
 
 export async function getDocViteConfig(): Promise<UserConfig> {
@@ -14,11 +15,6 @@ export async function getDocViteConfig(): Promise<UserConfig> {
       PACKAGE_NAME: `"${packageJson.name}"`,
       PACKAGE_VERSION: `"${packageJson.version}"`,
     },
-    plugins: [react({ tsDecorators: true })],
-    resolve: {
-      alias: {
-        [packageJson.name]: entries[0],
-      },
-    },
+    plugins: [react({ tsDecorators: true }), tsconfigPaths()],
   };
 }
