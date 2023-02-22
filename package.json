@@ -27,6 +27,7 @@
   },
   "files": [
     "dist",
+    "assets.d.ts",
     "global.d.ts",
     "jest-preset.mjs",
     "CHANGELOG.md",
