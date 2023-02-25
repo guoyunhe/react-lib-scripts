@@ -1,9 +1,7 @@
 # Changelog
 
-## 1.1.0 - 2023-02-15
+## 1.1.0 - 2023-02-25
 
-- Added something
-- Changed something
-- Fixed something
-- Removed something
-- Deprecated something
+- Added ability to generate CJS, ESM and TS declaration
+- Added ability to generate build and preview doc web app
+- Added ability to lint and test code

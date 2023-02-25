@@ -1,6 +1,6 @@
 {
   "name": "@guoyunhe/react-lib-scripts",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Scripts to build, lint and test React libraries",
   "keywords": [
     "node",
