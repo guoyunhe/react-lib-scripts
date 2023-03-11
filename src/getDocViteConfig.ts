@@ -1,13 +1,12 @@
 import react from '@vitejs/plugin-react-swc';
-import glob from 'fast-glob';
 import { UserConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { getPackageJson } from './getPackageJson';
 
 export async function getDocViteConfig(): Promise<UserConfig> {
-  const entries = await glob('src/index.{js,jsx,ts,tsx}');
   const packageJson = await getPackageJson();
   return {
+    base: './', // for GitHub pages
     build: {
       outDir: 'build',
     },
