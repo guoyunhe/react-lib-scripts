@@ -2,21 +2,16 @@
 const config = {
   collectCoverage: true,
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.{js,ts}',
+    '<rootDir>/src/**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}',
     '!<rootDir>/src/**/*.d.ts',
   ],
-  coveragePathIgnorePatterns: [
-    '/build/',
-    '/dist/',
-    '/coverage/',
-    '/node_modules/',
-  ],
+  coveragePathIgnorePatterns: ['/build/', '/dist/', '/docs/', '/coverage/', '/node_modules/'],
   coverageReporters: ['html', 'json-summary', 'text'],
   moduleNameMapper: {
     'lodash-es': 'lodash',
     'fetch-mock/esm/client': 'fetch-mock/cjs/client',
   },
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   transform: { '^.+\\.[tj]sx?$': 'ts-jest' },
 };
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.0 - 2023-03-12
+
+- Added `jest-environment-jsdom` dependency
+- Changed jest environment to `jsdom`
+- Changed jest coverage config to include `*.jsx`, `*.tsx`
+
 ## 1.2.0 - 2023-03-11
 
 - Changed Vite's `base` option for GitHub Pages deployment
