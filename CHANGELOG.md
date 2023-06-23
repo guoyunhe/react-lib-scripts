@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0 - 2023-06-23
+
+- Changed to skip doc building if `index.html` is not found
+
 ## 1.3.0 - 2023-03-12
 
 - Added `jest-environment-jsdom` dependency
