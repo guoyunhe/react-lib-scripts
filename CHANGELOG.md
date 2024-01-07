@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.0 - 2024-01-07
+
+- Added `@rive/doc-vite-plugin` plugin with MDX support
+- Updated to `vite@5`
+- Changed to ESM only
+
 ## 1.4.0 - 2023-06-23
 
 - Changed to skip doc building if `index.html` is not found
