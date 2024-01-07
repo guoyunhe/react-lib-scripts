@@ -2,7 +2,6 @@
 
 import { lint } from '@guoyunhe/lint-action';
 import { Command } from 'commander';
-import { run as jestRun } from 'jest';
 import { buildReactDoc } from '../buildReactDoc';
 import { buildReactLib } from '../buildReactLib';
 import { startDocServer } from '../startReactDoc';
@@ -47,11 +46,11 @@ program
   .description('Format source code with Prettier and fix ESLint issues')
   .action(() => lint({ fix: true }));
 
-program
-  .command('test')
-  .allowUnknownOption()
-  .description('Run unit tests (same with Jest API)')
-  .action(() => jestRun(process.argv.slice(3)));
+// program
+//   .command('test')
+//   .allowUnknownOption()
+//   .description('Run unit tests (same with Jest API)')
+//   .action(() => jestRun(process.argv.slice(3)));
 
 program.helpOption('-h, --help', 'Show full help');
 program.addHelpCommand('help [command]', 'Show help of a command');

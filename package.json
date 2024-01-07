@@ -19,8 +19,8 @@
     "name": "Guo Yunhe",
     "email": "i@guoyunhe.me"
   },
+  "type": "module",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
   "typings": "dist/index.d.ts",
   "bin": {
     "react-lib-scripts": "dist/react-lib-scripts.js"
